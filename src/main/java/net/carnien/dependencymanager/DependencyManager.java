@@ -56,7 +56,8 @@ public final class DependencyManager {
             final File file = new File("plugins/" + name + ".jar");
 
             try {
-                pluginManager.loadPlugin(file);
+                final Plugin plugin = pluginManager.loadPlugin(file);
+                plugin.onLoad();
             } catch (InvalidPluginException | InvalidDescriptionException exception) {
                 logger.warning("An error accorded while loading plugin '" + name + "'.");
                 return;

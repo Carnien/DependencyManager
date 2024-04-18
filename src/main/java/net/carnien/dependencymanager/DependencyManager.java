@@ -32,7 +32,7 @@ public final class DependencyManager {
         return dependencies.toArray(new Dependency[]{});
     }
 
-    private void downloadMissingDependencies() {
+    public void downloadMissingDependencies() {
         final Dependency[] missingDependencies = getMissingDependencies();
 
         if (missingDependencies.length == 0) return;
